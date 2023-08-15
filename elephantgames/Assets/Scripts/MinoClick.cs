@@ -9,6 +9,7 @@ public class MinoClick : MonoBehaviour, IPointerClickHandler
 
 {
     private Animator anim;
+    private AudioSource aSource;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -18,10 +19,12 @@ public class MinoClick : MonoBehaviour, IPointerClickHandler
     void Start()
     {
         anim = GetComponent<Animator>();
+        aSource = GetComponent<AudioSource>();
     }
      public void EndAnimation()
     {
         anim.SetInteger("Stage", 0);
+        aSource.Play();
     }
     // Update is called once per frame
     void Update()
